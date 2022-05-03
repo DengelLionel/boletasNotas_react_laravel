@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('create_account_users', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string("password");
+            $table->string("email");
         });
     }
 

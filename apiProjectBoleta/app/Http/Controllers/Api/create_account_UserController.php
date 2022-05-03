@@ -3,62 +3,45 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\create_account_user;
 use Illuminate\Http\Request;
 
 class create_account_UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function index()
     {
-        //
+       $accountsUsers= create_account_user::all();
+       return $accountsUsers;
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+   
     public function store(Request $request)
     {
-        //
+        $accountUser=new create_account_user();
+        $accountUser->email=$request->email;
+        $accountUser->password=$request->password;
+        $accountUser->save();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show($id)
     {
-        //
+      $accountUser=create_account_user::find($id);
+        return $accountUser;
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+       $accountUser= create_account_user::findOrFail($request->id);
+       $accountUser->email=$request->email;
+       $accountUser->password=$request->password;
+       $accountUser->save();
+       return $accountUser; 
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $accountUser= create_account_user::destroy($id);
+        return $accountUser;
     }
 }

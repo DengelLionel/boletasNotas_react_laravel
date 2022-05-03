@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class create_account_user extends Model
 {
     use HasFactory;
+    protected $fillable =["password","email"];
+
 }
