@@ -3,14 +3,16 @@ function HeaderDen(){
     return(
 
         <div >
-        <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
-          <nav className="relative flex items-end justify-end sm:h-10 lg:justify-end" aria-label="Global">
+        <div className=" relative pt-6 px-4 sm:px-6 lg:px-8 border-b-4 border-solid">
+        
+          <nav className=" relative flex items-start justify-end sm:h-10 lg:justify-end" aria-label="Global" >
+          <a href="#" className="absolute left-0">
+                  <span className="sr-only">Workflow</span>
+                  <img className=" h-8 w-auto sm:h-10" src="/img/svg/boleta_notas_logo.svg"/>
+                </a>
             <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
               <div className="flex items-center justify-between w-full md:w-auto">
-                <a href="#">
-                  <span className="sr-only">Workflow</span>
-                  <img className="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"/>
-                </a>
+                
                 <div className="-mr-2 flex items-center md:hidden">
                   <button type="button" className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
                     <span className="sr-only">Open main menu</span>
@@ -23,15 +25,13 @@ function HeaderDen(){
               </div>
             </div>
             <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-              <a href="#" className="font-medium text-gray-500 hover:text-gray-900">Product</a>
+              <a href="#" className="font-medium text-gray-500 hover:text-gray-900">Planes</a>
 
-              <a href="#" className="font-medium text-gray-500 hover:text-gray-900">Features</a>
+              <a href="#" className="font-medium text-gray-500 hover:text-gray-900">Conócenos</a>
 
-              <a href="#" className="font-medium text-gray-500 hover:text-gray-900">Marketplace</a>
-
-              <a href="#" className="font-medium text-gray-500 hover:text-gray-900">Company</a>
-
-              <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">Log in</a>
+              <a href="#" className="font-medium text-gray-500 hover:text-gray-900">Contactos</a>
+      
+              <a href="#" ><img className="inline-flex" src="./img/svg/login.svg" /></a>
             </div>
           </nav>
         </div>
@@ -39,7 +39,7 @@ function HeaderDen(){
           <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
             <div className="px-5 pt-4 flex items-center justify-between">
               <div>
-                <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt=""/>
+                <img className= "h-8 w-28" src="./img/svg/boleta_notas_logo.svg" alt=""/>
               </div>
               <div className="-mr-2">
                 <button type="button" className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
