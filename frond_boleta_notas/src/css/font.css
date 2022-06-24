@@ -1,0 +1,23 @@
+@font-face {
+    font-family: Roboto_Bold;
+    src: url(../font/Roboto_Bold.ttf);
+}
+@font-face {
+    font-family:Roboto_Regular ;
+    src: url(../font/Roboto-Regular.ttf);
+}
+h2{
+    font-family:Roboto_Bold;
+}
+label{
+    font-family: Roboto_Regular;
+    color: #767677;
+}
+
+button{
+    font-family: Roboto_Bold;
+}
+a{
+    font-family: Roboto_Regular; 
+    color: #0C34FD;
+}

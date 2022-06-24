@@ -1,6 +1,6 @@
 import { Link,NavLink,Outlet} from "react-router-dom"
 import Login from "./../cuadrosDialog/login"
-
+import { useState } from "react"
 import React from "react"
 //Las propiedades del login 
 let login={
@@ -23,21 +23,13 @@ function ApareceLogin(){
       <Login/>
     )
 }
+
 // --- ---------------------
 // Utilicé el React.Component para hacer trabajar mi boton login 
-class HeaderCompleto extends React.Component{
-  constructor(props){
-    super(props)
-    this.state={estado:true}
-    this.handleClick=this.handleClick.bind(this)
-  }
-  handleClick(){
-    this.setState(prevState=>({
-      estado:!prevState.estado
-    }))
-  }
- 
-  render(){
+function HeaderCompleto(props){
+  /* ========== Para que aparesca el login  ================== */
+  const[estado,setEstado]= useState(true)
+  /* ========== ----------------  ================== */
     return(
       <div className="m-0" >
       <div className=" relative pt-6 px-4 sm:px-6 lg:px-8 ">
@@ -45,7 +37,7 @@ class HeaderCompleto extends React.Component{
             <nav className=" relative flex items-start justify-end sm:h-10 lg:justify-end" aria-label="Global" >
        
               <Link to="#" className="absolute left-0">
-                <span className="sr-only">Workflow</span>
+            
                 <img className=" h-8 w-auto sm:h-10" src="/img/svg/boleta_notas_logo.svg"/>
                 </Link>
             
@@ -76,9 +68,10 @@ class HeaderCompleto extends React.Component{
          
                 <NavLink to="/Contactos" className="font-medium text-gray-500 hover:text-gray-900">Contactos</NavLink>
   
-                 <BotonLogin login={login} clic={this.handleClick}
-                 />
-                 {this.state.estado ? "":ApareceLogin()}
+                 <BotonLogin login={login} clic={()=>setEstado(!estado)}
+                 
+                 />{estado?"":ApareceLogin()}
+                
                  
                     
                 </div>
@@ -124,7 +117,7 @@ class HeaderCompleto extends React.Component{
     </div>
 
     )
-  }
+  
  
         
 }
